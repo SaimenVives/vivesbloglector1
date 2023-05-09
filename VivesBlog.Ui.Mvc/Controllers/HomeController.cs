@@ -28,6 +28,7 @@ namespace VivesBlog.Ui.Mvc.Controllers
             {
                 articles.Add(new Article
                 {
+                    Id = i,
                     Title = $"Article title {i}",
                     Description = $"This is about article {i}",
                     Content = $"The full content of article {i}",

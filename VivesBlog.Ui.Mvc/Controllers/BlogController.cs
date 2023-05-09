@@ -19,6 +19,7 @@ namespace VivesBlog.Ui.Mvc.Controllers
             {
                 articles.Add(new Article
                 {
+                    Id = i,
                     Title = $"Article title {i}",
                     Description = $"This is about article {i}",
                     Content = $"The full content of article {i}",
@@ -28,6 +29,20 @@ namespace VivesBlog.Ui.Mvc.Controllers
             }
 
             return articles;
+        }
+
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            var artikels = GetArticles();
+            var article = artikels.FirstOrDefault(a => a.Id == id);
+
+            if (article is null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View("PersonDetail", article);
         }
     }
 }

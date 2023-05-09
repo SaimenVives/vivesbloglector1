@@ -23,6 +23,7 @@
     <div class="card-body">
         <h5 class="card-title">by @Model.Author</h5>
         <p class="card-text">@Model.Description</p>
+        <button asp-action="Detail" asp-route-id="@Model.Id">Read More</button>
     </div>
     <div class="card-footer">
         <small>written on @localDateTime.ToLongDateString() @localDateTime.ToShortTimeString()</small>
